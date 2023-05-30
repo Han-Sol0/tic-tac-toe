@@ -1,12 +1,11 @@
-
+import Field from './components/Field'
 import './App.css';
 
 function App() {
+  
   return (
     <div className='App'>
-      {
-        Array.apply(null, { length: 9 }).map((e, i) => <button className='button' onClick={() => {}} key={i}>{'-'}</button>)
-      }
+        <Field />
     </div>
   );
 }
