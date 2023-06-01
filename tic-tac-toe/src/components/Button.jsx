@@ -1,14 +1,16 @@
 import React from "react"
-import { useState } from 'react';
 
-const Button = (key, squares, setSquares) => {
-    const [value, setValue] = useState(squares[key]);
-    const handleClick = () => {
-        setValue('X');
-        setSquares(squares[key]=value);// надо изменить массив а он не изменяется
-    }
-    return <>
-        <button className='button' onClick={handleClick} key={key}>{value}</button>
-    </>
+
+const Button = ({squares, click}) => {
+    return (
+        <>
+            {
+                squares.map((square, i) => (
+                    <button className = 'button' onClick={()=> click(i)}>{square}</button>
+                ))
+            }
+        </>
+    )
 }
+
 export default Button
